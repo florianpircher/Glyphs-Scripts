@@ -10,3 +10,4 @@
 .com.apple.timemachine.donotpresent
 Icon
 ._*
+__pycache__
