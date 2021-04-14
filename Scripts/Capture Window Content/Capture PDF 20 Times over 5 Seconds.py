@@ -1,8 +1,11 @@
 # MenuTitle: Capture PDF 20 Times over 5 Seconds
-"""Print the content of the frontmost window to a PDF on the desktop 20 times within 5 seconds."""
+__doc__ = """
+Writes the contents of the frontmost window to a PDF file on the desktop 20 times within 5 seconds.
+"""
 
-from AppKit import (NSObject, NSTimer)
 from CaptureWindowContent import (captureWindowContent, writeFile)
+from AppKit import (NSObject, NSTimer)
+
 
 TOTAL_TIME = 5
 TOTAL_COUNT = 20

@@ -1,5 +1,7 @@
 # MenuTitle: Capture PDF With 5 Second Delay
-"""Writes the contents of the frontmost window to a PDF file on the desktop 5 seconds after invoking the script."""
+__doc__ = """
+Writes the contents of the frontmost window to a PDF file on the desktop 5 seconds after invoking the script.
+"""
 
 from AppKit import (NSObject, NSTimer)
 from CaptureWindowContent import (captureWindowContent, writeFile)

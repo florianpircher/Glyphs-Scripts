@@ -1,5 +1,5 @@
 # MenuTitle: Toggle Select Segment Up
-"""
+__doc__ = """
 If an on-curve node is selected, selectes the handles above; otherwise the on-curve node above the selected handles is selected.
 """
 
