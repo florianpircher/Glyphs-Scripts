@@ -80,32 +80,37 @@ def toggleSelect(layer, OFFCURVE, h, v):
     for group in selectionGroups:
         targets = targetNodes(group, OFFCURVE)
         (fx, fy) = sourcePosition(group)
-        print((fx, fy))
         minDistance = math.inf
         match = None
+        hasVPIMatch = False
 
         for target in targets:
             (tx, ty) = (target.position.x, target.position.y)
 
             if h == 1 and v == 0:  # right
-                if tx < fx:
+                if tx <= fx:
                     continue
             elif h == -1 and v == 0:  # left
-                if tx > fx:
+                if tx >= fx:
                     continue
             elif h == 0 and v == 1:  # up
-                if ty < fy:
+                if ty <= fy:
                     continue
             elif h == 0 and v == -1:  # down
-                if ty > fy:
+                if ty >= fy:
                     continue
 
+            isVPIMatch = target.type == OFFCURVE
+
+            if hasVPIMatch and not isVPIMatch:
+                continue
+
             distance = distanceBetween((fx, fy), (tx, ty))
-            print(f"-> {(tx, ty)} = {distance}")
 
             if distance < minDistance:
                 minDistance = distance
                 match = target
+                hasVPIMatch = hasVPIMatch or isVPIMatch
 
         if match is not None:
             if isinstance(group, FrozenSet):
@@ -124,6 +129,3 @@ def toggleSelect(layer, OFFCURVE, h, v):
 
     for node in select:
         node.selected = True
-
-    print(f"select: {select}")
-    print(f"unselect: {unselect}")
