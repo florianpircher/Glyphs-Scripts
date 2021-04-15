@@ -2,59 +2,69 @@ from typing import FrozenSet
 import math
 
 
-def targetNodes(source, OFFCURVE):
+def expandGroup(group, OFFCURVE):
+    if group.type == OFFCURVE:
+        fullGroup = [group]
+
+        if group.nextNode.type == OFFCURVE:
+            fullGroup.append(group.nextNode)
+        if group.prevNode.type == OFFCURVE:
+            fullGroup.append(group.prevNode)
+
+        return frozenset(fullGroup)
+    else:
+        return frozenset([group])
+
+
+def targetGroups(source, OFFCURVE):
     targets = set()
 
     if isinstance(source, FrozenSet):
         for handle in source:
             if handle.nextNode.type != OFFCURVE:
-                targets.add(handle.nextNode)
+                targets.add(frozenset([handle.nextNode]))
             if handle.prevNode.type != OFFCURVE:
-                targets.add(handle.prevNode)
+                targets.add(frozenset([handle.prevNode]))
     else:
-        targets.add(source.prevNode)
-        targets.add(source.nextNode)
+        targets.add(expandGroup(source.prevNode, OFFCURVE))
+        targets.add(expandGroup(source.nextNode, OFFCURVE))
 
     return targets
 
 
-def sourcePosition(source):
-    if isinstance(source, FrozenSet):
+def groupPosition(group):
+    if isinstance(group, FrozenSet):
         x = 0
         y = 0
 
-        for handle in source:
+        for handle in group:
             x += handle.position.x
             y += handle.position.y
 
-        n = len(source)
+        n = len(group)
         nx = x / n
         ny = y / n
 
         return (nx, ny)
-
     else:
-        return (source.position.x, source.position.y)
-
-
-def expandMatch(match, OFFCURVE):
-    if match.type == OFFCURVE:
-        fullMatch = [match]
-
-        if match.nextNode.type == OFFCURVE:
-            fullMatch.append(match.nextNode)
-        if match.prevNode.type == OFFCURVE:
-            fullMatch.append(match.prevNode)
-
-        return fullMatch
-    else:
-        return [match]
+        return (group.position.x, group.position.y)
 
 
 def distanceBetween(p1, p2):
     (x1, y1) = p1
     (x2, y2) = p2
     return math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
+
+
+def isVIPGroup(group, OFFCURVE):
+    if isinstance(group, FrozenSet):
+        for handle in group:
+            if handle.type == OFFCURVE:
+                return True
+
+        return False
+    else:
+        return group.type == OFFCURVE
 
 
 def toggleSelect(layer, OFFCURVE, h, v):
@@ -78,14 +88,14 @@ def toggleSelect(layer, OFFCURVE, h, v):
     select = set()
 
     for group in selectionGroups:
-        targets = targetNodes(group, OFFCURVE)
-        (fx, fy) = sourcePosition(group)
+        targets = targetGroups(group, OFFCURVE)
+        (fx, fy) = groupPosition(group)
         minDistance = math.inf
         match = None
         hasVPIMatch = False
 
         for target in targets:
-            (tx, ty) = (target.position.x, target.position.y)
+            (tx, ty) = groupPosition(target)
 
             if h == 1 and v == 0:  # right
                 if tx <= fx:
@@ -100,14 +110,14 @@ def toggleSelect(layer, OFFCURVE, h, v):
                 if ty >= fy:
                     continue
 
-            isVPIMatch = target.type == OFFCURVE
+            isVPIMatch = isVIPGroup(target, OFFCURVE)
 
             if hasVPIMatch and not isVPIMatch:
                 continue
 
             distance = distanceBetween((fx, fy), (tx, ty))
 
-            if distance < minDistance:
+            if (distance < minDistance) or (isVPIMatch and not hasVPIMatch):
                 minDistance = distance
                 match = target
                 hasVPIMatch = hasVPIMatch or isVPIMatch
@@ -119,8 +129,7 @@ def toggleSelect(layer, OFFCURVE, h, v):
             else:
                 markUnselect.add(group)
 
-            fullMatch = expandMatch(match, OFFCURVE)
-            select.update(fullMatch)
+            select.update(match)
 
     unselect = markUnselect - select
 
