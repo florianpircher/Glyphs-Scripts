@@ -1,6 +1,6 @@
 # MenuTitle: Isolate Sheet
 __doc__ = """
-Moves the sheet of the current window to a separate, zero sized window.
+Moves the topmost sheet of the current window to a separate, zero sized window.
 """
 
 from Cocoa import (
