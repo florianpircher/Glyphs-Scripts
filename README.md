@@ -2,25 +2,48 @@
 
 Florian Pircher’s Python scripts for the [Glyphs](https://glyphsapp.com) font editor.
 
+## Preview
+
+### Show All Instances
+
+Shows all instances when “Show All Instances” is selected in the preview in Edit View and in the Preview Panel.
+
+### Show Active Instances Only
+
+Shows only active instances when “Show All Instances” is selected in the preview in Edit View and in the Preview Panel.
+Set the active state of an instance in File → Font Info… → Exports.
+
+### Show No Instances
+
+Hides all instances when “Show All Instances” is selected in the preview in Edit View and in the Preview Panel.
+
+## Selection
+
+The selection scripts are an extension to the [Keyboard Selection Travel](https://github.com/florianpircher/Keyboard-Selection-Travel) plugin.
+
+### ​Select Node/Handles {Left, Right, Up, Down}
+
+Selects the on-curve node or the two off-curve nodes {to the left of, to the right of, above, below} the current selection
+
 ## Screenshot
 
 The screenshot scripts are helpful when documenting Glyphs, Glyphs workflows, or Glyphs extensions.
 
-### Capture PDF
+### Capture Window to PDF
 
 Writes the contents of the frontmost window to a PDF file on the desktop.
 
-### Capture PDF With 5 Second Delay
+### Capture Window to PDF With 5 Second Delay
 
 Writes the contents of the frontmost window to a PDF file on the desktop 5 seconds after invoking the script.
 
-### Capture PDF 20 Times over 5 Seconds
+### Capture Window to PDF 20 Times over 5 Seconds
 
 Writes the contents of the frontmost window to a PDF file on the desktop 20 times within 5 seconds.
 
 ### Isolate Sheet
 
-Moves the topmost sheet of the current window to a separate, zero sized window.
+Moves the topmost sheet window to a separate, zero sized window.
 
 ### Make Window Transparent
 
@@ -30,12 +53,4 @@ Helpful for screenshotting popovers (which are not affected by this script).
 ### Make Window Opaque
 
 Sets the alpha value of the frontmost window to 1.
-Helpful after the “Make Window Transparent” script.
-
-## Selection
-
-The selection scripts are an extension to the [Keyboard Selection Travel](https://github.com/florianpircher/Keyboard-Selection-Travel) plugin.
-
-### Toggle Select Segment {Left, Right, Up, Down}
-
-If an on-curve node is selected, selectes the handles {to the left, to the right, above, below}; otherwise the on-curve node {to the left, to the right, above, below} the selected handles is selected.
+Helpful to reset the effects of the “Make Window Transparent” script.
