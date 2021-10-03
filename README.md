@@ -1,8 +1,8 @@
 # Florian Pircher’s Scripts
 
-Florian Pircher’s Python Scripts for the [Glyphs](https://glyphsapp.com) font editor.
+Florian Pircher’s Python scripts for the [Glyphs](https://glyphsapp.com) font editor.
 
-## Capture Window Content
+## Screenshot
 
 ### Capture PDF
 
@@ -10,8 +10,8 @@ Florian Pircher’s Python Scripts for the [Glyphs](https://glyphsapp.com) font 
 
 ### Capture PDF 20 Times over 5 Seconds
 
+### Isolate Sheet
+
 ## Selection
 
-### Travel
-
-#### Toggle Select Segment Left/Right/Up/Down
+### Toggle Select Segment Left/Right/Up/Down
