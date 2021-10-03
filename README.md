@@ -4,6 +4,8 @@ Florian Pircher’s Python scripts for the [Glyphs](https://glyphsapp.com) font 
 
 ## Screenshot
 
+The screenshot scripts are helpful when documenting Glyphs, Glyphs workflows, or Glyphs extensions.
+
 ### Capture PDF
 
 Writes the contents of the frontmost window to a PDF file on the desktop.
@@ -31,6 +33,8 @@ Sets the alpha value of the frontmost window to 1.
 Helpful after the “Make Window Transparent” script.
 
 ## Selection
+
+The selection scripts are an extension to the [Keyboard Selection Travel](https://github.com/florianpircher/Keyboard-Selection-Travel) plugin.
 
 ### Toggle Select Segment {Left, Right, Up, Down}
 
