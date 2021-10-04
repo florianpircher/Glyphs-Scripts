@@ -53,4 +53,4 @@ Helpful for screenshotting popovers (which are not affected by this script).
 ### Make Window Opaque
 
 Sets the alpha value of the frontmost window to 1.
-Helpful to reset the effects of the “Make Window Transparent” script.
+Helpful for resetting the effects of the “Make Window Transparent” script.

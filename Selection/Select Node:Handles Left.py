@@ -1,5 +1,5 @@
 __MenuTitle__ = {
-	"de": "​Linken Knoten/linkes Anfasser-Paar auswählen",
+	"de": "​Knoten/Anfasser-Paar links auswählen",
 	"en": "​Select Node/Handles Left",
 }
 __MenuDescription__ = {

@@ -1,5 +1,5 @@
 __MenuTitle__ = {
-	"de": "​​​​Unteren Knoten/unteres Anfasser-Paar auswählen",
+	"de": "​​​​Knoten/Anfasser-Paar unten auswählen",
 	"en": "​​​​Select Node/Handles Down",
 }
 __MenuDescription__ = {
