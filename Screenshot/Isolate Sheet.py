@@ -1,11 +1,7 @@
-__MenuTitle__ = {
-	"de": "​​​​Sheet-Fenster isolieren",
-	"en": "​​​​Isolate Sheet Window",
-}
-__MenuDescription__ = {
-	"de": "Bewegt das vorderste Sheet-Fenster auf ein eigenes, formloses Fenster.",
-	"en": "Moves the topmost sheet window to a separate, zero sized window.",
-}
+#MenuTitle: ​​​​Isolate Sheet Window
+__doc__ = """
+Moves the topmost sheet window to a separate, zero sized window.
+"""
 
 from Cocoa import (
     NSApp,

@@ -1,11 +1,7 @@
-__MenuTitle__ = {
-	"de": "​​Fenster als PDF mit 5 Sekunden Verzögerung sichern",
-	"en": "​​Capture Window to PDF With 5 Second Delay",
-}
-__MenuDescription__ = {
-	"de": "Schreibt ein PDF mit den Inhalten des vordersten Fensters auf den Schreibtisch mit einer Verzögerung von 5 Sekunden.",
-	"en": "Writes the contents of the frontmost window to a PDF file on the desktop 5 seconds after invoking the script.",
-}
+#MenuTitle: ​​Capture Window to PDF With 5 Second Delay
+__doc__ = """
+Writes the contents of the frontmost window to a PDF file on the desktop 5 seconds after invoking the script.
+"""
 
 from AppKit import (NSObject, NSTimer)
 from CaptureWindowContent import (captureWindowContent, writeFile)

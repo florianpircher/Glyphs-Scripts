@@ -1,11 +1,7 @@
-__MenuTitle__ = {
-	"de": "​​​Fenster als PDF 20 Mal über 5 Sekunden sichern",
-	"en": "​​​Capture Window to PDF 20 Times over 5 Seconds",
-}
-__MenuDescription__ = {
-	"de": "Schreibt ein PDF mit den Inhalten des vordersten Fensters 20 Mal auf den Schreibtisch innerhalb von 5 Sekunden.",
-	"en": "Writes the contents of the frontmost window to a PDF file on the desktop 20 times within 5 seconds.",
-}
+#MenuTitle: ​​​Capture Window to PDF 20 Times over 5 Seconds
+__doc__ = """
+Writes the contents of the frontmost window to a PDF file on the desktop 20 times within 5 seconds.
+"""
 
 from CaptureWindowContent import (captureWindowContent, writeFile)
 from AppKit import (NSObject, NSTimer)
