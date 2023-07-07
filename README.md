@@ -19,11 +19,19 @@ Hides all instances when “Show All Instances” is selected in the preview in 
 
 ## Selection
 
-The selection scripts are an extension to the [Keyboard Selection Travel](https://github.com/florianpircher/Keyboard-Selection-Travel) plugin.
+### Select Nodes Between Bounding Nodes
+
+For each path on the active layer:
+
+1. If the path has two selected nodes, select all nodes in between.
+2. If a path has a single contiguous chain of selected nodes, invert the selection but keep the first and last nodes selected.
+3. Otherwise, do nothing with the path.
 
 ### ​Select Node/Handles {Left, Right, Up, Down}
 
 Selects the on-curve node or the two off-curve nodes {to the left of, to the right of, above, below} the current selection
+
+These scripts are an extension to the [Keyboard Selection Travel](https://github.com/florianpircher/Keyboard-Selection-Travel) plugin.
 
 ## Screenshot
 
@@ -40,10 +48,6 @@ Writes the contents of the frontmost window to a PDF file on the desktop 5 secon
 ### Capture Window to PDF 20 Times over 5 Seconds
 
 Writes the contents of the frontmost window to a PDF file on the desktop 20 times within 5 seconds.
-
-### Isolate Sheet
-
-Moves the topmost sheet window to a separate, zero sized window.
 
 ### Make Window Transparent
 
