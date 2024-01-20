@@ -1,4 +1,4 @@
-# MenuTitle: • ​Top Left
+# MenuTitle: Top Left
 from AppKit import NSUserDefaults
 
 userDefaults = NSUserDefaults.standardUserDefaults()

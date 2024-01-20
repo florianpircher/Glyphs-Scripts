@@ -1,4 +1,4 @@
-# MenuTitle: • ​​​​​​​​​​​Cap Height
+# MenuTitle: Cap Height
 from AppKit import NSUserDefaults
 
 userDefaults = NSUserDefaults.standardUserDefaults()

@@ -1,4 +1,4 @@
-# MenuTitle: • ​​​​​​​​​​​​​​​Baseline
+# MenuTitle: Baseline
 from AppKit import NSUserDefaults
 
 userDefaults = NSUserDefaults.standardUserDefaults()

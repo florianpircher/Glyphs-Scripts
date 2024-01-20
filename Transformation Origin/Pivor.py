@@ -1,4 +1,4 @@
-# MenuTitle: • ​​​​​​​​​​Pivot
+# MenuTitle: Pivot
 from AppKit import NSUserDefaults
 
 userDefaults = NSUserDefaults.standardUserDefaults()

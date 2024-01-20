@@ -1,4 +1,4 @@
-# MenuTitle: • ​​​​​​Center Right
+# MenuTitle: Center Right
 from AppKit import NSUserDefaults
 
 userDefaults = NSUserDefaults.standardUserDefaults()

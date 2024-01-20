@@ -1,4 +1,4 @@
-# MenuTitle: • ​​​​​​​​​​​​​​Half x-Height
+# MenuTitle: Half x-Height
 from AppKit import NSUserDefaults
 
 userDefaults = NSUserDefaults.standardUserDefaults()
