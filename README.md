@@ -1,5 +1,7 @@
 # Florian Pircher’s Scripts
 
+Make change that gets overwritten by a force push.
+
 Florian Pircher’s Python scripts for the [Glyphs](https://glyphsapp.com) font editor.
 
 ## Preview
